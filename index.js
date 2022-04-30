@@ -19,6 +19,12 @@ try {
   await client.connect()
  const furnitureCollections = client.db('furniture').collection('products')
 
+// post api
+app.post('/product',async(req,res)=>{
+   const newProduct = req.body;
+   const product = await furnitureCollections.insertOne(newProduct)
+   res.send(product)
+})
 // get all products api
 app.get('/product',async(req,res)=>{
   const query = {}
