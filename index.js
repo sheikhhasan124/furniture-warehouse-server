@@ -56,7 +56,7 @@ run().catch(console.dir);
 
 
 app.get('/',(req,res)=>{
-    res.send('home')
+    res.send('welcome home')
 })
 
 app.listen(port, ()=>{
