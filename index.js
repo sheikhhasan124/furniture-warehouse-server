@@ -12,7 +12,7 @@ app.use(express.json())
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = "mongodb+srv://furnitureWarehouse:0YlFGborr8mxojzG@cluster0.hjxrb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hjxrb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 async function run(){
 try {
@@ -56,7 +56,7 @@ run().catch(console.dir);
 
 
 app.get('/',(req,res)=>{
-    res.send('welcome home')
+    res.send('welcome to home')
 })
 
 app.listen(port, ()=>{
