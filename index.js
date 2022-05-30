@@ -123,7 +123,7 @@ run().catch(console.dir);
 
 
 app.get('/',(req,res)=>{
-    res.send('welcome to home')
+    res.send('welcome to warehouse home')
 })
 
 app.listen(port, ()=>{
